@@ -265,7 +265,7 @@ class ADF4351
     uint8_t Prescaler ;
     /*!
        The power output level settings
-       allowed values 0-3
+       allowed values 0-3 (−4 dBm, −1 dBm, +2 dBm, +5 dBm)
     */
     byte pwrlevel ;
 
