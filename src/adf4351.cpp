@@ -201,11 +201,13 @@ int  ADF4351::setf(uint32_t freq)
     return 1 ;
   }
 
-  if ( Prescaler == 0 && ( N_Int < 23  || N_Int > 65535)) {
+  uint16_t bit16full = 65535; 
+
+  if ( Prescaler == 0 && ( N_Int < 23  || N_Int > bit16full)) {
     Serial.println(F("N_Int out of range")) ;
     return 1;
 
-  } else if ( Prescaler == 1 && ( N_Int < 75 || N_Int > 65535 )) {
+  } else if ( Prescaler == 1 && ( N_Int < 75 || N_Int > bit16full)) {
     Serial.println(F("N_Int out of range")) ;
     return 1;
   }
