@@ -112,7 +112,7 @@ class ADF4351
        @param speed the SPI Serial Speed (see SPI speed values)
        @param order the SPI bit order (see SPI bit order values)
     */
-    ADF4351(byte pin, uint8_t mode, unsigned long  speed, uint8_t order ) ;
+    ADF4351(byte pin, uint8_t mode, unsigned long  speed, uint8_t order, uint32_t ADFminFreq, uint32_t ADFmaxFreq) ;
     /*!
        initialize and start the SPI interface. Call this once after instanciating
        the object
@@ -266,6 +266,14 @@ class ADF4351
        allowed values 0-3 (−4 dBm, −1 dBm, +2 dBm, +5 dBm)
     */
     byte pwrlevel ;
+    /*!
+       Sets ADF max frequency
+    */
+    uint32_t maxFreq;
+    /*!
+       Sets ADF min frequency
+    */
+    uint32_t minFreq;
 
 };
 
