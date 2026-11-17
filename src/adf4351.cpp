@@ -89,7 +89,7 @@ uint32_t  Reg::getbf(uint8_t start, uint8_t len)
 // ADF4351 settings
 
 
-ADF4351::ADF4351(byte pin, uint8_t mode, unsigned long  speed, uint8_t order )
+ADF4351::ADF4351(byte pin, uint8_t mode, unsigned long  speed, uint8_t order, uint32_t ADFminFreq, uint32_t ADFmaxFreq)
 {
   spi_settings = SPISettings(speed, order, mode) ;
   pinSS = pin ;
@@ -105,6 +105,8 @@ ADF4351::ADF4351(byte pin, uint8_t mode, unsigned long  speed, uint8_t order )
   ClkDiv = 150 ;
   Prescaler = 0 ;
   pwrlevel = 0 ;
+  maxFreq = ADFmaxFreq;
+  minFreq = ADFminFreq;
 }
 
 void ADF4351::init()
@@ -120,9 +122,9 @@ void ADF4351::init()
 int  ADF4351::setf(uint32_t freq)
 {
   //  calculate settings from freq
-  if ( freq > ADF_FREQ_MAX ) return 1 ;
+  if ( freq > maxFreq ) return 1 ;
 
-  if ( freq < ADF_FREQ_MIN ) return 1 ;
+  if ( freq < minFreq ) return 1 ;
 
   int localosc_ratio =   2200000000UL / freq ;
   outdiv = 1 ;
