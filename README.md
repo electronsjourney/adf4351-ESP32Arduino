@@ -1,5 +1,5 @@
 # adf4351
-Arduino Library for the ADF4351 Wideband Frequency Synthesizer chip
+ESP32 Arduino framework library for the ADF4351 Wideband Frequency Synthesizer chip, forked from dfannin/adf4351.
 
 ## Introduction
 
