@@ -12,7 +12,7 @@
 #define ADF_FREQ_MAX  4294967295UL    ///< Maximum Generated Frequency = value of MAX Unsigned Long
 #define ADF_FREQ_MIN  34385000UL      ///< Minimum Generated Frequency
 
-ADF4351  vfo(PIN_SS, SPI_MODE0, 1000000UL , MSBFIRST) ;
+ADF4351  vfo(PIN_SS, SPI_MODE0, 1000000UL , MSBFIRST, ADF_FREQ_MIN, ADF_FREQ_MAX);
 
 
 void setup()
