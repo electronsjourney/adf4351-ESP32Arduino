@@ -19,8 +19,6 @@ extern uint32_t steps[];  ///< Array of Frequency Step Values
 #define NSTEPS 7  ///< Number of Freq Step Values defined
 
 // need to use max unsigned long on arduino , oh well
-#define ADF_FREQ_MAX  4294967295UL    ///< Maximum Generated Frequency = value of MAX Unsigned Long
-#define ADF_FREQ_MIN  34385000UL      ///< Minimum Generated Frequency
 #define ADF_PFD_MAX   32000000.0      ///< Maximum Frequency for Phase Detector
 #define ADF_PFD_MIN   125000.0        ///< Minimum Frequency for Phase Detector
 #define ADF_REFIN_MAX   250000000UL   ///< Maximum Reference Frequency
